@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "*.html", "use": "@vercel/static" },
+    { "src": "site.js", "use": "@vercel/static" },
+    { "src": "*.mp4", "use": "@vercel/static" },
+    { "src": "*.jpeg", "use": "@vercel/static" },
+    { "src": "*.png", "use": "@vercel/static" },
+    { "src": "images/*.svg", "use": "@vercel/static" },
+    { "src": "api/*.js", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "/api/analyze-size", "dest": "/api/analyze-size.js" },
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
+}
